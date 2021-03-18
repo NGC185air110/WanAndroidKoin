@@ -7,5 +7,11 @@ ext {
             versionCode      : 1,
             versionName      : "1.0",
     ]
-    dependVersion = []
+    dependVersion = [
+            arouterVersion        : "1.5.1",
+            arouterCompilerVersion: "1.5.1",
+    ]
+
+    arouter = "com.alibaba:arouter-api:$dependVersion.arouterVersion"
+    arouterCompiler = "com.alibaba:arouter-compiler:$dependVersion.arouterCompilerVersion"
 }
