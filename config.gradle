@@ -11,7 +11,12 @@ ext {
             arouterVersion        : "1.5.1",
             arouterCompilerVersion: "1.5.1",
     ]
+    supportDeps = [
+            multidex: "androidx.multidex:multidex:2.0.0",
+    ]
 
     arouter = "com.alibaba:arouter-api:$dependVersion.arouterVersion"
     arouterCompiler = "com.alibaba:arouter-compiler:$dependVersion.arouterCompilerVersion"
+
+    supportLibs = supportDeps.values()
 }
