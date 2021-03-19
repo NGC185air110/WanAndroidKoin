@@ -10,13 +10,28 @@ ext {
     dependVersion = [
             arouterVersion        : "1.5.1",
             arouterCompilerVersion: "1.5.1",
+            retrofitSdkVersion    : "2.9.0",
+            rxJava2               : "2.2.21",
+            rxAndroid2            : "2.1.1",
     ]
     supportDeps = [
             multidex: "androidx.multidex:multidex:2.0.0",
+    ]
+    retrofit = [
+            //------ retrofit和RxJava ---------
+            retrofit                : "com.squareup.retrofit2:retrofit:$dependVersion.retrofitSdkVersion",
+            retrofitConverterGson   : "com.squareup.retrofit2:converter-gson:$dependVersion.retrofitSdkVersion",
+            retrofitAdapterRxjava2  : "com.squareup.retrofit2:adapter-rxjava2:$dependVersion.retrofitSdkVersion",
+            okhttp3LoggerInterceptor: 'com.squareup.okhttp3:logging-interceptor:3.14.9'
+    ]
+    rxJava2 = [
+            rxJava2   : "io.reactivex.rxjava2:rxjava:$dependVersion.rxJava2",
+            rxAndroid2: "io.reactivex.rxjava2:rxandroid:$dependVersion.rxAndroid2"
     ]
 
     arouter = "com.alibaba:arouter-api:$dependVersion.arouterVersion"
     arouterCompiler = "com.alibaba:arouter-compiler:$dependVersion.arouterCompilerVersion"
 
     supportLibs = supportDeps.values()
+    rxJava2Libs = rxJava2.values()
 }
