@@ -29,9 +29,17 @@ ext {
             rxAndroid2: "io.reactivex.rxjava2:rxandroid:$dependVersion.rxAndroid2"
     ]
 
+    other = [
+            //Logger
+            logger: 'com.orhanobut:logger:2.1.1',
+            mmkv  : 'com.tencent:mmkv-static:1.2.7',
+    ]
+
     arouter = "com.alibaba:arouter-api:$dependVersion.arouterVersion"
     arouterCompiler = "com.alibaba:arouter-compiler:$dependVersion.arouterCompilerVersion"
 
     supportLibs = supportDeps.values()
     rxJava2Libs = rxJava2.values()
+    networkLibs = retrofit.values()
+    otherLibs = other.values()
 }
