@@ -37,8 +37,15 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
-}
 
+    flavorDimensions "color"
+    productFlavors {
+        dev {
+            buildConfigField("String", "API_URL", "\"${API_URL}\"")
+            dimension "color"
+        }
+    }
+}
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     api "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"

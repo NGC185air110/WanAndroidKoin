@@ -41,6 +41,13 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+
+    flavorDimensions "color"
+    productFlavors {
+        dev{
+            dimension "color"
+        }
+    }
 }
 
 dependencies {
