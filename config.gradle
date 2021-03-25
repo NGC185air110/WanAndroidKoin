@@ -13,6 +13,7 @@ ext {
             retrofitSdkVersion    : "2.9.0",
             rxJava2               : "2.2.21",
             rxAndroid2            : "2.1.1",
+            koin_version          : "$koin_version",
     ]
     supportDeps = [
             multidex: "androidx.multidex:multidex:2.0.0",
@@ -34,6 +35,13 @@ ext {
             logger: 'com.orhanobut:logger:2.1.1',
             mmkv  : 'com.tencent:mmkv-static:1.2.7',
     ]
+    koin = [
+            koinScope      : "org.koin:koin-androidx-scope:$dependVersion.koin_version",
+            koinVM         : "org.koin:koin-androidx-viewmodel:$dependVersion.koin_version",
+            koinfragment   : "org.koin:koin-androidx-fragment:$dependVersion.koin_version",
+            koinworkmanager: "org.koin:koin-androidx-workmanager:$dependVersion.koin_version",
+            koinext        : "org.koin:koin-androidx-ext:$dependVersion.koin_version"
+    ]
 
     arouter = "com.alibaba:arouter-api:$dependVersion.arouterVersion"
     arouterCompiler = "com.alibaba:arouter-compiler:$dependVersion.arouterCompilerVersion"
@@ -42,4 +50,5 @@ ext {
     rxJava2Libs = rxJava2.values()
     networkLibs = retrofit.values()
     otherLibs = other.values()
+    koinLibs = koin.values()
 }

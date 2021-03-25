@@ -59,8 +59,7 @@ dependencies {
     //Support库
     api rootProject.ext.supportLibs
     //Koin依赖注入
-    api "org.koin:koin-core:$koin_version"
-    testApi "org.koin:koin-test:$koin_version"
+    api rootProject.ext.koinLibs
     //rxjava2
     api rootProject.ext.rxJava2Libs
     //okhttp
