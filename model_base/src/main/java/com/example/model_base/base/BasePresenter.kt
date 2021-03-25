@@ -3,8 +3,8 @@ package com.example.model_base.base
 /**
  * title：
  * description：
- * author：dinglicheng on 2021/3/24 14:46
+ * author：dinglicheng on 2021/3/25 15:43
  */
-abstract class BasePresenter<V> {
+abstract class BasePresenter {
 
 }
