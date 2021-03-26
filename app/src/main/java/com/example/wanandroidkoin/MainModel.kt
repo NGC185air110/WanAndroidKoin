@@ -12,7 +12,7 @@ import com.example.model_base.model.login.UserLoginBase
  */
 class MainModel constructor(view: MainContract.View) : MainContract.Model,
     BaseModel<MainContract.View>(view) {
-    fun userLogin(map: Map<String, String>) {
+    override fun login(map: Map<String, String>) {
         addSubscription(mApi.userLogin(getJsonRequestBody(map)),
             object : BaseObserver<ResultResponse<UserLoginBase>>() {
                 override fun onNext(t: ResultResponse<UserLoginBase>) {

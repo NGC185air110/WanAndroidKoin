@@ -55,7 +55,9 @@ class BaseApplication : MultiDexApplication() {
     }
     fun initKoin(){
         val appModel = module {
+            factory {
 
+            }
         }
         startKoin {
             androidLogger()
