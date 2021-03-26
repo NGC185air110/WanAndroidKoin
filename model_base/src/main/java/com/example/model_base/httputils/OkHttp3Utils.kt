@@ -17,8 +17,7 @@ object OkHttp3Utils {
     private var mOkHttpClient: OkHttpClient? = null
 
     //设置缓存目录
-    private val cacheDirectory =
-        File(BaseApplication.context.applicationContext.cacheDir.absolutePath, "WanAndroid")
+    private val cacheDirectory = File(BaseApplication.context.applicationContext.cacheDir.absolutePath, "wanandroidkoin")
     private val cache = Cache(cacheDirectory, (10 * 1024 * 1024).toLong())
 
 

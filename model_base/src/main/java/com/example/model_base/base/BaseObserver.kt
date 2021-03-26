@@ -19,6 +19,6 @@ open class BaseObserver<T> : DisposableObserver<T>() {
     }
 
     override fun onComplete() {
-
+        dispose()
     }
 }

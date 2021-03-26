@@ -6,6 +6,8 @@ import com.example.model_base.model.login.UserLoginBase
 import io.reactivex.Observable
 import okhttp3.RequestBody
 import retrofit2.http.Body
+import retrofit2.http.FieldMap
+import retrofit2.http.FormUrlEncoded
 import retrofit2.http.POST
 
 /**
@@ -17,6 +19,7 @@ interface ApiService {
     /**
      * 用户登录
      */
+    @FormUrlEncoded
     @POST(ConstantUrl.POSTUSERTLOGIN)
-    fun userLogin(@Body requestBody: RequestBody?): Observable<ResultResponse<UserLoginBase>>
+    fun userLogin(@FieldMap map: Map<String, String>): Observable<ResultResponse<UserLoginBase>>
 }

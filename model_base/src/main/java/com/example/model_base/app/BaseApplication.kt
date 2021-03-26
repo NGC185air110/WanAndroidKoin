@@ -26,9 +26,9 @@ class BaseApplication : MultiDexApplication() {
 
     override fun onCreate() {
         super.onCreate()
+        context = applicationContext
         initARouter(this@BaseApplication)
         initMMKV()
-        initKoin()
     }
 
     companion object {
