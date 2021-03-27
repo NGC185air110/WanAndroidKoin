@@ -44,22 +44,6 @@ class SessionCookieJar : CookieJar {
             .value(sessionId1)
             .build()
         cookies.add(cookie1)
-
-        val sessionId2 =kv?.getString("loginUserName","")
-        val cookie2 = Cookie.Builder()
-            .hostOnlyDomain(url.host())
-            .name("loginUserName")
-            .value(sessionId2)
-            .build()
-        cookies.add(cookie2)
-
-        val sessionId3 =kv?.getString("token_pass","")
-        val cookie3 = Cookie.Builder()
-            .hostOnlyDomain(url.host())
-            .name("token_pass")
-            .value(sessionId3)
-            .build()
-        cookies.add(cookie3)
         return  cookies
     }
 }

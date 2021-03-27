@@ -27,6 +27,7 @@ class BaseApplication : MultiDexApplication() {
     override fun onCreate() {
         super.onCreate()
         context = applicationContext
+        instance =this
         initARouter(this@BaseApplication)
         initMMKV()
     }

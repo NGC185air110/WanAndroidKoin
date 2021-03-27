@@ -24,7 +24,7 @@ class MainActivity : AppCompatActivity(), MainContract.View {
     }
 
     override fun loginSuccess(userLoginBase: ResultResponse<UserLoginBase>) {
-        binding.tvHello.text = userLoginBase.data.toString()
+        binding.tvHello.text = userLoginBase.data?.nickname
     }
 
     override fun loginError() {
