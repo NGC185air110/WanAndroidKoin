@@ -25,7 +25,7 @@ object OkHttp3Utils {
         get() {
             if (null == mOkHttpClient) {
                 mOkHttpClient = OkHttpClient.Builder()
-                    .cookieJar(SessionCookieJar())
+                    //.cookieJar(SessionCookieJar())
                     .addInterceptor(LoggingInterceptor())
                     .connectTimeout(20, TimeUnit.SECONDS)
                     .writeTimeout(20, TimeUnit.SECONDS)
