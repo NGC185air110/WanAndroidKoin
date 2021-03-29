@@ -1,6 +1,7 @@
 package com.example.model_base.httputils
 
 import com.example.model_base.BuildConfig
+import com.example.model_base.httputils.converter.CustomGsonConverterFactory
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
@@ -26,7 +27,7 @@ object RetrofitUtils {
                 }
                 mRetrofit = Retrofit.Builder()
                     .baseUrl("$apiServer/")
-                    .addConverterFactory(GsonConverterFactory.create())
+                    .addConverterFactory(CustomGsonConverterFactory.create())
                     .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                     .client(mOkHttpClient!!)
                     .build()

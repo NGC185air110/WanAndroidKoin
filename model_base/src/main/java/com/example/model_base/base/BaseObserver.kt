@@ -2,6 +2,7 @@ package com.example.model_base.base
 
 import android.widget.Toast
 import com.example.model_base.app.BaseApplication
+import com.example.model_base.httputils.converter.error.ApiException
 import io.reactivex.observers.DisposableObserver
 
 /**
@@ -15,7 +16,19 @@ open class BaseObserver<T> : DisposableObserver<T>() {
     }
 
     override fun onError(e: Throwable) {
-        Toast.makeText(BaseApplication.context, "网络错误", Toast.LENGTH_SHORT).show()
+        when (e) {
+            is ApiException -> {
+                when {
+                    e.isNetWorkError -> {
+                        Toast.makeText(BaseApplication.context, "网络错误", Toast.LENGTH_SHORT).show()
+                    }
+                }
+            }
+            else -> {
+                Toast.makeText(BaseApplication.context, "网络错误1111", Toast.LENGTH_SHORT).show()
+            }
+        }
+
     }
 
     override fun onComplete() {
