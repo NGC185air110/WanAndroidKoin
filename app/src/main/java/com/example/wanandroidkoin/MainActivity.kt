@@ -19,7 +19,10 @@ class MainActivity : AppCompatActivity(), MainContract.View {
         }
         setContentView(binding.root)
         binding.btnLogin.setOnClickListener {
-            mainPresenter?.login("1297740798@qq.com", "zhn820849zhn")
+            mainPresenter?.login("1297740798@qq.com", "zhn820849zhn1")
+        }
+        binding.btnFavorites.setOnClickListener {
+            mainPresenter?.getFavorites()
         }
     }
 
@@ -29,5 +32,13 @@ class MainActivity : AppCompatActivity(), MainContract.View {
 
     override fun loginError() {
 
+    }
+
+    override fun getFavoritesSuccess(favorites: ResultResponse<Any>) {
+        TODO("Not yet implemented")
+    }
+
+    override fun getFavoritesError() {
+        TODO("Not yet implemented")
     }
 }

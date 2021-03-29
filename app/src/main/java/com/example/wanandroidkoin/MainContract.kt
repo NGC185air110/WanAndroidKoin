@@ -11,9 +11,12 @@ import com.example.model_base.model.login.UserLoginBase
 interface MainContract {
     interface Presenter {
         fun login(username: String, password: String)
+        fun getFavorites()
     }
     interface View {
         fun loginSuccess(userLoginBase: ResultResponse<UserLoginBase>)
         fun loginError()
+        fun getFavoritesSuccess(favorites: ResultResponse<Any>)
+        fun getFavoritesError()
     }
 }

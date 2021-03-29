@@ -11,7 +11,8 @@ import com.example.model_base.model.login.UserLoginBase
  * description：
  * author：dinglicheng on 2021/3/25 15:21
  */
-class MainPresenter constructor(view: MainContract.View) : MainContract.Presenter, BasePresenter<MainContract.View>(view) {
+class MainPresenter constructor(view: MainContract.View) : MainContract.Presenter,
+    BasePresenter<MainContract.View>(view) {
 
     private val mainView: MainContract.View = view
 
@@ -31,5 +32,17 @@ class MainPresenter constructor(view: MainContract.View) : MainContract.Presente
                     mainView.loginError()
                 }
             })
+    }
+
+    override fun getFavorites() {
+        addSubscription(mApi.getFavorites("/0/json"), object : BaseObserver<ResultResponse<Any>>() {
+            override fun onNext(t: ResultResponse<Any>) {
+                super.onNext(t)
+            }
+
+            override fun onError(e: Throwable) {
+                super.onError(e)
+            }
+        })
     }
 }

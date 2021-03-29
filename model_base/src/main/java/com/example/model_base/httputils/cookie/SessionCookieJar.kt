@@ -1,11 +1,10 @@
 package com.example.model_base.httputils.cookie
 
-import com.example.model_base.app.BaseApplication
 import com.tencent.mmkv.MMKV
 import okhttp3.Cookie
 import okhttp3.CookieJar
 import okhttp3.HttpUrl
-import java.util.ArrayList
+import java.util.*
 
 
 /**
@@ -20,7 +19,6 @@ class SessionCookieJar : CookieJar {
             for (cookie in cookies){
                 if(cookie.value().isNotEmpty()){
                     kv?.encode(cookie.name(),cookie.value())
-                    BaseApplication.instance!!.sessionId = BaseApplication.instance!!.sessionId + cookie.value()
                 }
             }
         }

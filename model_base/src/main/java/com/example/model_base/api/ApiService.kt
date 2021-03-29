@@ -5,10 +5,7 @@ import com.example.model_base.model.ResultResponse
 import com.example.model_base.model.login.UserLoginBase
 import io.reactivex.Observable
 import okhttp3.RequestBody
-import retrofit2.http.Body
-import retrofit2.http.FieldMap
-import retrofit2.http.FormUrlEncoded
-import retrofit2.http.POST
+import retrofit2.http.*
 
 /**
  * title：
@@ -22,4 +19,7 @@ interface ApiService {
     @FormUrlEncoded
     @POST(ConstantUrl.POSTUSERTLOGIN)
     fun userLogin(@FieldMap map: Map<String, String>): Observable<ResultResponse<UserLoginBase>>
+
+    @GET("${ConstantUrl.GETFAVORITES}/{path}")
+    fun getFavorites(@Path("path") url: String): Observable<ResultResponse<Any>>
 }

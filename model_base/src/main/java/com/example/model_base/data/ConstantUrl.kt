@@ -8,4 +8,5 @@ package com.example.model_base.data
 object ConstantUrl {
     //手机登录接口
     const val POSTUSERTLOGIN = "user/login"
+    const val GETFAVORITES = "lg/collect/list"
 }
