@@ -20,12 +20,12 @@ open class BaseObserver<T> : DisposableObserver<T>() {
             is ApiException -> {
                 when {
                     e.isNetWorkError -> {
-                        Toast.makeText(BaseApplication.context, "网络错误", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(BaseApplication.context, "网络开小差请重试", Toast.LENGTH_SHORT).show()
                     }
                 }
             }
             else -> {
-                Toast.makeText(BaseApplication.context, "网络错误1111", Toast.LENGTH_SHORT).show()
+                Toast.makeText(BaseApplication.context, "网络错误", Toast.LENGTH_SHORT).show()
             }
         }
 

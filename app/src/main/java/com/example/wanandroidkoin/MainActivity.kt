@@ -1,12 +1,12 @@
 package com.example.wanandroidkoin
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.LayoutInflater
+import androidx.appcompat.app.AppCompatActivity
 import com.example.model_base.model.ResultResponse
 import com.example.model_base.model.login.UserLoginBase
 import com.example.wanandroidkoin.databinding.ActivityMainBinding
-import org.koin.dsl.module
+
 
 class MainActivity : AppCompatActivity(), MainContract.View {
     private lateinit var binding: ActivityMainBinding

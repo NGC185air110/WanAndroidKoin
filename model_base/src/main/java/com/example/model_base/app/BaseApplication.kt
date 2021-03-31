@@ -9,10 +9,6 @@ import com.alibaba.android.arouter.launcher.ARouter
 import com.example.model_base.BuildConfig
 import com.orhanobut.logger.Logger
 import com.tencent.mmkv.MMKV
-import org.koin.android.ext.koin.androidContext
-import org.koin.android.ext.koin.androidLogger
-import org.koin.core.context.startKoin
-import org.koin.dsl.module
 import java.util.*
 import kotlin.properties.Delegates
 
@@ -53,17 +49,5 @@ class BaseApplication : MultiDexApplication() {
     fun initMMKV(){
         val rootDir:String = MMKV.initialize(this@BaseApplication)
         Logger.d("mmkv root:  $rootDir")
-    }
-    fun initKoin(){
-        val appModel = module {
-            factory {
-
-            }
-        }
-        startKoin {
-            androidLogger()
-            androidContext(this@BaseApplication)
-            modules(appModel)
-        }
     }
 }
