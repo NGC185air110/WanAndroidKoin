@@ -32,8 +32,10 @@ ext {
 
     other = [
             //Logger
-            logger: 'com.orhanobut:logger:2.1.1',
-            mmkv  : 'com.tencent:mmkv-static:1.2.7',
+            logger           : 'com.orhanobut:logger:2.1.1',
+            mmkv             : 'com.tencent:mmkv-static:1.2.7',
+            banner           : 'com.github.zhpanvip:BannerViewPager:3.5.0',
+            sectionedRecycler: 'com.github.luizgrp:SectionedRecyclerViewAdapter:v3.2.0'
     ]
     koin = [
             koinScope      : "org.koin:koin-androidx-scope:$dependVersion.koin_version",

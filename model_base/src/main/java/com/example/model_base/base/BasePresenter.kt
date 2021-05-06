@@ -1,7 +1,6 @@
 package com.example.model_base.base
 
 import com.example.model_base.api.ApiService
-import com.example.model_base.httputils.OkHttp3Utils
 import com.example.model_base.httputils.RetrofitUtils
 import com.google.gson.Gson
 import io.reactivex.Observable
