@@ -1,32 +1,21 @@
 package com.example.wanandroidkoin
 
 import android.os.Bundle
-import android.view.LayoutInflater
-import androidx.appcompat.app.AppCompatActivity
+import android.view.View
 import com.alibaba.android.arouter.facade.annotation.Route
+import com.example.model_base.base.BaseActivity
 import com.example.model_base.model.ResultResponse
 import com.example.model_base.model.login.UserLoginBase
 import com.example.model_base.utils.RouteUtils
 import com.example.wanandroidkoin.databinding.ActivityMainBinding
 
 @Route(path = RouteUtils.Activity_Home)
-class MainActivity : AppCompatActivity(), MainContract.View {
-    private lateinit var binding: ActivityMainBinding
-    private var mainPresenter: MainPresenter? =MainPresenter(this)
+class MainActivity : BaseActivity<ActivityMainBinding>(), MainContract.View {
+    private var mainPresenter: MainPresenter? = MainPresenter(this)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = LayoutInflater.from(this).run {
-            ActivityMainBinding.inflate(this)
-        }
         setContentView(binding.root)
-        binding.btnLogin.setOnClickListener {
-            mainPresenter?.login("1297740798@qq.com", "zhn820849zhn")
-        }
-        binding.btnFavorites.setOnClickListener {
-            mainPresenter?.getFavorites()
-        }
-        var a: Long = 197_812_309_120_931
     }
 
     override fun loginSuccess(userLoginBase: ResultResponse<UserLoginBase>) {
@@ -37,11 +26,28 @@ class MainActivity : AppCompatActivity(), MainContract.View {
 
     }
 
-    override fun getFavoritesSuccess(favorites: ResultResponse<Any>) {
-        TODO("Not yet implemented")
+    override fun getFavoritesSuccess(favorites: ResultResponse<Any>) {}
+
+    override fun getFavoritesError() {}
+
+    override fun layoutId(): Int {
+        return R.layout.activity_main
     }
 
-    override fun getFavoritesError() {
-        TODO("Not yet implemented")
+    override fun initData() {}
+
+    override fun initListener() {
+        setOnClick(binding.btnLogin, binding.btnFavorites)
+    }
+
+    override fun onClick(v: View?) {
+        when (v?.id) {
+            R.id.btn_login -> {
+                mainPresenter?.login("1297740798@qq.com", "zhn820849zhn")
+            }
+            R.id.btn_favorites -> {
+                mainPresenter?.getFavorites()
+            }
+        }
     }
 }
