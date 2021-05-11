@@ -41,7 +41,6 @@ class MainActivity : BaseActivity<ActivityMainBinding>(), MainContract.View {
     }
 
     override fun onClick(v: View?) {
-        //text
         when (v?.id) {
             R.id.btn_login -> {
                 mainPresenter?.login("1297740798@qq.com", "zhn820849zhn")
