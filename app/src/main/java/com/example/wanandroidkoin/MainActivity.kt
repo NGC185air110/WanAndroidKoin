@@ -33,13 +33,13 @@ class MainActivity : BaseActivity<ActivityMainBinding>(), MainContract.View {
     override fun layoutId(): Int {
         return R.layout.activity_main
     }
-    //测试下git11111111
+    
     override fun initData() {}
 
     override fun initListener() {
         setOnClick(binding.btnLogin, binding.btnFavorites)
     }
-
+    //测试下git11111111
     override fun onClick(v: View?) {
         when (v?.id) {
             R.id.btn_login -> {
