@@ -33,7 +33,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>(), MainContract.View {
     override fun layoutId(): Int {
         return R.layout.activity_main
     }
-
+    //测试下git
     override fun initData() {}
 
     override fun initListener() {
