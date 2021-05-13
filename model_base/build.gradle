@@ -60,6 +60,9 @@ dependencies {
     api rootProject.ext.supportLibs
     //Koin依赖注入
     //api rootProject.ext.koinLibs
+    //不知道为什么需要加到model用api
+    // https://mvnrepository.com/artifact/org.apache.commons/commons-lang3
+    api group: 'org.apache.commons', name: 'commons-lang3', version: '3.11'
     //rxjava2
     api rootProject.ext.rxJava2Libs
     //okhttp
