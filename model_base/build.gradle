@@ -3,6 +3,7 @@ plugins {
     id 'kotlin-android'
     id 'kotlin-parcelize'
     id 'kotlin-kapt'
+    //id 'dagger.hilt.android.plugin'
 }
 kapt {
     arguments {
@@ -60,6 +61,9 @@ dependencies {
     api rootProject.ext.supportLibs
     //Koin依赖注入
     //api rootProject.ext.koinLibs
+    //hilt
+    //implementation "com.google.dagger:hilt-android:$hilt_version"
+    //kapt "com.google.dagger:hilt-android-compiler:$hilt_version"
     //不知道为什么需要加到model用api
     // https://mvnrepository.com/artifact/org.apache.commons/commons-lang3
     api group: 'org.apache.commons', name: 'commons-lang3', version: '3.11'
