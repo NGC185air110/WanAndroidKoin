@@ -50,10 +50,14 @@ android {
         jvmTarget = '1.8'
     }
 
-    flavorDimensions "color"
+    flavorDimensions "Oreo"
     productFlavors {
         dev {
-            dimension "color"
+            dimension "Oreo"
+            resConfigs "zh","xxhdpi"
+        }
+        pro{
+            dimension "Oreo"
         }
     }
 }

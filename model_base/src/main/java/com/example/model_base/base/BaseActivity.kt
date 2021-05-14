@@ -18,6 +18,7 @@ abstract class BaseActivity<BindingClass> : AppCompatActivity(), View.OnClickLis
         val name = acName.substring(0, acName.indexOf("Activity"))
         val bindingClass = classLoader.loadClass("com.example.wanandroidkoin.databinding.Activity${name}Binding")
         innerBinding = bindingClass.getMethod("inflate", LayoutInflater::class.java).invoke(null, layoutInflater) as BindingClass
+        lifecycle.addObserver(BaseLifecycle())
 
         setContentView(layoutId())
         initConfigure()

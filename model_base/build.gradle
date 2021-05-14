@@ -39,11 +39,15 @@ android {
         jvmTarget = '1.8'
     }
 
-    flavorDimensions "color"
+    flavorDimensions "Oreo"
     productFlavors {
         dev {
             buildConfigField("String", "API_URL", "\"${API_URL}\"")
-            dimension "color"
+            dimension "Oreo"
+            resConfigs "zh","xxhdpi"
+        }
+        pro{
+            dimension "Oreo"
         }
     }
 }

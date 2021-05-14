@@ -2,6 +2,9 @@ package com.example.wanandroidkoin
 
 import android.os.Bundle
 import android.view.View
+import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.LifecycleObserver
+import androidx.lifecycle.OnLifecycleEvent
 import com.alibaba.android.arouter.facade.annotation.Route
 import com.example.model_base.base.BaseActivity
 import com.example.model_base.model.ResultResponse
